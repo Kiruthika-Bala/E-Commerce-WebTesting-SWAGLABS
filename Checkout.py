@@ -29,13 +29,14 @@ exp_quan=1
 if quantity == exp_quan:
     print("Quantity Test case passed")
 else:
-    print("Quantity is not matched with your order")
+    print("Quantity is not matched with your order, Please check")
 driver.find_element(By.XPATH,"//button[@id='finish']").click()
 
 finish = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, "//h2[normalize-space()='Thank you for your order!']")))
 
 assert "Thank you for your order!" == finish.text
 print(finish.text)
+
 
 
 
